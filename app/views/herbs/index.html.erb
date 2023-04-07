@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Herbs</h1>
+
+<div id="herbs">
+  <% @herbs.each do |herb| %>
+    <%= render herb %>
+    <p>
+      <%= link_to "#{herb.common_names[0]} (#{herb.latin_name})", herb %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New herb", new_herb_path %>
