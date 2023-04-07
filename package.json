@@ -1,4 +1,11 @@
 {
   "name": "app",
-  "private": "true"
+  "private": "true",
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "rollup": "^3.20.2"
+  },
+  "scripts": {
+    "build": "rollup -c --bundleConfigAsCjs rollup.config.js"
+  }
 }
