@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render ConstituentComponent.new(constituent: @constituent) %>
+
+<div>
+  <%= link_to "Edit this constituent", edit_constituent_path(@constituent) %> |
+  <%= link_to "Back to constituents", constituents_path %>
+
+  <%= button_to "Destroy this constituent", @constituent, method: :delete %>
+</div>

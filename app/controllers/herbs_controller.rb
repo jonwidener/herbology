@@ -13,15 +13,20 @@ class HerbsController < ApplicationController
   # GET /herbs/new
   def new
     @herb = Herb.new
+    @all_constituents = Constituent.all
   end
 
   # GET /herbs/1/edit
   def edit
+    @all_constituents = Constituent.all
   end
 
   # POST /herbs or /herbs.json
   def create
     @herb = Herb.new(herb_params)
+
+    c = Constituent.find(constituents_params)
+    @herb.constituents.concat c
 
     respond_to do |format|
       if @herb.save
@@ -67,7 +72,10 @@ class HerbsController < ApplicationController
     def herb_params
       result = params.require(:herb).permit(:latin_name, :common_names, :description)
       result[:common_names] = result[:common_names].split(/[\s,]+/)
-      puts result
       result
+    end
+
+    def constituents_params
+      params.require(:constituents).keys
     end
 end
