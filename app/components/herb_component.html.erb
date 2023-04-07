@@ -2,13 +2,12 @@
 <h1><%= @herb.latin_name %></h1>
 <h3>
     <% @herb.common_names.each do |name| %>
-    <span><%= name %></span>
+        <span><%= name %></span>
     <% end %>
 </h3>
 <p><%= @herb.description %></p>
 </div>
 
 <% @herb.constituents.each do |constituent| %>
-    <div><%= constituent.name %></div>
-    <p><%= constituent.description %></p>
+    <%= render ConstituentComponent.new(constituent: constituent) %>
 <% end %>

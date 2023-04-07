@@ -1,4 +1,7 @@
 <%= form_with(model: herb) do |form| %>
+  Latin Name: <input name="herb[latin_name]" value="<%= @herb.latin_name %>"><br>
+  Common Names: <input name="herb[common_names]" value="<%= @herb.common_names&.join(' ') %>"><br>
+  Description: <%= text_area_tag("herb[description]", @herb.description, size: "40x3") %>
   <% if herb.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(herb.errors.count, "error") %> prohibited this herb from being saved:</h2>

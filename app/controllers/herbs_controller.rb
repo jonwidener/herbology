@@ -65,6 +65,9 @@ class HerbsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def herb_params
-      params.fetch(:herb, {})
+      result = params.require(:herb).permit(:latin_name, :common_names, :description)
+      result[:common_names] = result[:common_names].split(/[\s,]+/)
+      puts result
+      result
     end
 end
