@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "herbs/index", type: :view do
   before(:each) do
     assign(:herbs, [
-      Herb.create!(),
-      Herb.create!()
+      Herb.create!(latin_name: 'latin', common_names: ['common'], description: 'description'),
+      Herb.create!(latin_name: 'latin', common_names: ['common'], description: 'description')
     ])
   end
 
