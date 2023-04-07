@@ -8,15 +8,15 @@ class CreateHerbs < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    create_table :constituencies do |t|
+    create_table :constituents do |t|
       t.string :name
       t.string :description
 
       t.timestamps
     end
 
-    create_table :constituencies_herbs, id: false do |t|
-      t.belongs_to :constituency
+    create_table :constituents_herbs, id: false do |t|
+      t.belongs_to :constituent
       t.belongs_to :herb
     end
   end

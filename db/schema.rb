@@ -11,18 +11,18 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_04_07_144127) do
-  create_table "constituencies", force: :cascade do |t|
+  create_table "constituents", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "constituencies_herbs", id: false, force: :cascade do |t|
-    t.integer "constituency_id"
+  create_table "constituents_herbs", id: false, force: :cascade do |t|
+    t.integer "constituent_id"
     t.integer "herb_id"
-    t.index ["constituency_id"], name: "index_constituencies_herbs_on_constituency_id"
-    t.index ["herb_id"], name: "index_constituencies_herbs_on_herb_id"
+    t.index ["constituent_id"], name: "index_constituents_herbs_on_constituent_id"
+    t.index ["herb_id"], name: "index_constituents_herbs_on_herb_id"
   end
 
   create_table "herbs", force: :cascade do |t|
