@@ -13,7 +13,10 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+#gem "puma", "~> 5.0"
+
+# Passenger instead
+gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
