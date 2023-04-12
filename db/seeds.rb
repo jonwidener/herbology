@@ -5,7 +5,3 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
-h = Herb.create(latin_name: 'mentha piperita', common_names: ["peppermint", "candymint"], description: 'A hybrid species of mint, a cross between watermint and spearmint. Indigenous to Europe and the Middle East, the plant is now widely spread and cultivated in many regions of the world. It is occasionally found in the wild with its parent species.')
-c = Constituent.create(name: 'cooling', description: 'A cooling effect')
-h.constituents << c
